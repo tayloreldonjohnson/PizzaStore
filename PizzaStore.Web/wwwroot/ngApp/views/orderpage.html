@@ -1,4 +1,7 @@
 ﻿<h1>Place Your Information</h1>
+
+<div>your customer id is {{ controller.getCustomerId() }}</div>
+
 <form novalidate ng-submit="controller.addCustomer()">
     <label for="name">Name</label>
     <input id="name" ng-model="controller.customer.name" type="text" required />
