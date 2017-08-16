@@ -4,6 +4,7 @@
         this.pizzas = [];
         this.getPizzas();
         this.order = {};
+        this.customer = {};
     }
     getPizzas() {
         this.http.get("api/Pizzas")
@@ -11,11 +12,12 @@
                 this.pizzas = res.data;
             });
     }
-    addOrder() {
-        this.http.post("api/Orders", this.order)
+    
+
+    addCustomers() {
+        this.http.post("api/Customers", this.customer)
             .then(res => {
-                this.order = {};
-                this.getPizzas();
+                this.customer = {};
             });
     }
 }

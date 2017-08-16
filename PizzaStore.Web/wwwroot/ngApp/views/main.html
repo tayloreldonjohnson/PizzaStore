@@ -1,8 +1,23 @@
 ﻿<h1> Order Here</h1>
-<form ng-submit="controllers.addOrders()">
-<ul >
-    <li ng-repeat=" pizza in controller.pizzas"><img ng-src="{{pizza.imageUrl}}" /> {{pizza.name}} {{pizza.price}} <input type="number" ng-model="quantity" /> <input type="submit" value="Submit" /></li>
-</ul>
+<form ng-submit="controller.addCustomers()">    
+    <label for="name">Customer Name: </label><input type="text" ng-model="controller.customer.name" /><br />
+    <label for="phone">Phone: </label><input type="text" ng-model="controller.customer.phone" /><br />
+    <label for="email">Email: </label><input type="text" ng-model="controller.customer.email" /><br />
+
+    
+    <input type="submit" value="Submit" ng-click="" />   
 
 </form>
+
+
+
+<!--<ul>
+    <li ng-repeat="pizza in controller.pizzas">
+        <img ng-src="{{pizza.imageUrl}}" /><br /><br />
+        {{pizza.name}}<br />
+        {{pizza.price}}<br />
+        <label for="quantity">Quantity: </label><input type="number" ng-model="quantity" /><br />
+        <input type="submit" value="Submit" />
+    </li>
+</ul>-->
 
