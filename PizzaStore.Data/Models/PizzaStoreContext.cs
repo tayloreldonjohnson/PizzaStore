@@ -44,6 +44,8 @@ namespace PizzaStore.Data.Models
 
                     entity.Property(e => e.Name).HasMaxLength(50);
                     entity.Property(e => e.Price);
+                    entity.Property(e => e.ImageUrl).HasMaxLength(255)
+                    .IsRequired();
 
 
                 });
