@@ -11,9 +11,10 @@ using System;
 namespace PizzaStore.Data.Migrations
 {
     [DbContext(typeof(PizzaStoreContext))]
-    partial class PizzaStoreContextModelSnapshot : ModelSnapshot
+    [Migration("20170816172538_AddImageUrl")]
+    partial class AddImageUrl
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
