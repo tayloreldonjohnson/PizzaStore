@@ -1,10 +1,11 @@
 ﻿class MainController {
-    constructor($http) {
+    constructor($http, $state) {
         this.http = $http;
         this.pizzas = [];
         this.getPizzas();
         this.order = {};
-        this.customer = {};
+		this.customer = {};
+		this.state = $state
     }
     getPizzas() {
         this.http.get("api/Pizzas")
@@ -14,10 +15,11 @@
     }
     
 
-    addCustomers() {
-        this.http.post("api/Customers", this.customer)
+	addCustomers() {
+		this.http.post("api/Customers", this.customer)
             .then(res => {
-                this.customer = {};
+				this.customer = {};
+				this.state.go('orderpage');
             });
     }
 }
