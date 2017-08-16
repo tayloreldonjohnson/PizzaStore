@@ -14,8 +14,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\libs\" />
-    <Folder Include="wwwroot\ngApp\controllers\" />
     <Folder Include="wwwroot\ngApp\services\" />
   </ItemGroup>
 

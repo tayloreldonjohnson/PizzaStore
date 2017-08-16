@@ -1,4 +1,8 @@
 ﻿<h1> Order Here</h1>
+<form ng-submit="controllers.addOrders()">
 <ul >
-    <li ng-repeat=" pizza in controller.pizzas"> <a href="orderpage.html"> {{pizza.name}}</a></li>
+    <li ng-repeat=" pizza in controller.pizzas"><img ng-src="{{pizza.imageUrl}}" /> {{pizza.name}} {{pizza.price}} <input type="number" ng-model="quantity" /> <input type="submit" value="Submit" /></li>
 </ul>
+
+</form>
+
