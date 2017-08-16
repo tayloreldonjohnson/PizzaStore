@@ -10,12 +10,17 @@
 
   <ItemGroup>
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.0" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="wwwroot\libs\" />
     <Folder Include="wwwroot\ngApp\controllers\" />
     <Folder Include="wwwroot\ngApp\services\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PizzaStore.Data\PizzaStore.Data.csproj" />
   </ItemGroup>
 
 </Project>
