@@ -6,10 +6,12 @@
 		this.cookies = $cookies;
 		this.getPizzas();
 		this.pizzas = [];
+		this.order.customerid = this.getCustomerId(); 
     }
 
     getCustomerId() {
-        return this.cookies.get("customerId");
+		var customerid = this.cookies.get("customerId");
+		return parseInt(customerid);
 	}
 
 	getPizzas() {
@@ -19,11 +21,11 @@
 			});
 	}
 
-    addOrder() {
+	addOrder() {
+		console.log(this.order);
         this.http.post("api/Orders", this.order)
             .then(res => {
                 this.order = {};
-                this.getPizzas();
             });
     }
 }

@@ -1,19 +1,25 @@
-﻿<h1>Place Your Information</h1>
+﻿<h1>Select Your Pizza</h1>
 
-<div>your customer id is {{ controller.getCustomerId() }}</div>
-
+<form ng-submit="controller.addOrder()">
 <label>
-	Pizzas:
-	<select ng-model="myColor" ng-options="pizza.name for pizza in controller.pizzas"></select>
+	Your customer id is {{ controller.getCustomerId() }}
+	<input style="visibility: hidden;" type="number" name="CustomerId" ng-model="controller.order.customerid" />
+	<br />
+	Select Your Pizza:
+	<select id="pizzaId" ng-model="controller.order.pizzaId" ng-options="pizza.name for pizza in controller.pizzas track by pizza.pizzaId"></select>
+	<br />
+	<label for="quantity">Quantity: </label>
+	<input type="number" ng-model="controller.order.quantity" />
+	<br />
+	<input type="submit" value="Submit" />
 </label>
+</form>
 
 <ul>
 	<li ng-repeat="pizza in controller.pizzas">
 		<img ng-src="{{pizza.imageUrl}}" /><br /><br />
 		{{pizza.name}}<br />
 		{{pizza.price}}<br />
-		<label for="quantity">Quantity: </label><input type="number" ng-model="quantity" /><br />
-		<input type="submit" value="Submit" />
 	</li>
 </ul>
 
