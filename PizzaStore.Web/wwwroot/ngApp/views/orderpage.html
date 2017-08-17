@@ -2,6 +2,21 @@
 
 <div>your customer id is {{ controller.getCustomerId() }}</div>
 
+<label>
+	Pizzas:
+	<select ng-model="myColor" ng-options="pizza.name for pizza in controller.pizzas"></select>
+</label>
+
+<ul>
+	<li ng-repeat="pizza in controller.pizzas">
+		<img ng-src="{{pizza.imageUrl}}" /><br /><br />
+		{{pizza.name}}<br />
+		{{pizza.price}}<br />
+		<label for="quantity">Quantity: </label><input type="number" ng-model="quantity" /><br />
+		<input type="submit" value="Submit" />
+	</li>
+</ul>
+
 <form novalidate ng-submit="controller.addCustomer()">
     <label for="name">Name</label>
     <input id="name" ng-model="controller.customer.name" type="text" required />
