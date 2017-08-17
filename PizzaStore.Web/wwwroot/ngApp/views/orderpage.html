@@ -6,8 +6,13 @@
 	<input style="visibility: hidden;" type="number" name="CustomerId" ng-model="controller.order.customerid" />
 	<br />
 	Select Your Pizza:
-	<select id="pizzaId" ng-model="controller.order.pizzaId" ng-options="pizza.name for pizza in controller.pizzas track by pizza.pizzaId"></select>
-	<br />
+
+    <select ng-model="controller.order.pizzaId">
+        <option ng-repeat="pizza in controller.pizzas" value="{{pizza.pizzaId}}">{{pizza.name}}</option>
+    </select>
+	<!--<select id="pizzaId" ng-model="controller.order.pizzaId" ng-options="pizza.name for pizza in controller.pizzas track by pizza.pizzaId"></select>-->
+	
+    <br />
 	<label for="quantity">Quantity: </label>
 	<input type="number" ng-model="controller.order.quantity" />
 	<br />
