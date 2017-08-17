@@ -3,7 +3,7 @@
         this.http = $http;
         this.order = {};
 		this.customer = {};
-        this.state = $state
+		this.state = $state;
         this.cookies = $cookies;
     }
     
